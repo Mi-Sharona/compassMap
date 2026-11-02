@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 // RequestMapping is a annotation that maps HTTP requests to handler methods
 // it is used to map the HTTP requests to the methods in the controller
+@CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/api/v1/questions")
 public class QuestionRestController {
     // Autowired is an annotation that marks the field as a dependency

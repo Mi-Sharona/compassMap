@@ -31,6 +31,26 @@ class DemoApplicationTests {
 
 	}
 
+
+        @Autowired
+        private QuestionRepository questionRepository;
+
+        @Autowired
+        private QuestionAndAnswerRepository questionAndAnswerRepository;
+
+        @Test
+        void crearQuestionAnswer() {
+        QuestionAndAnswer qa1 = new QuestionAndAnswer();
+        qa1.setId("qa-001");
+        qa1.setQuestion(q1);
+        qa1.setAnswer(new Answer("a-001", true));
+        qa1.setScoreContributor(1.2);
+        questionAndAnswerRepository.save(qa1);
+        }
+    }
+
+
+
 	@Test
 	void deleteCustomerById(){
 
