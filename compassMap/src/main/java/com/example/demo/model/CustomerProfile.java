@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Map;
+import java.util.HashMap;;
 
 @Entity
 @Data
@@ -30,7 +31,8 @@ public class CustomerProfile {
     // Jackson still deserializes the JSON object fine on request.
     // HashMap does not work with H2 because of the size limit of the column
     @ElementCollection
-    private Map<Dimension, Boolean> answers;
+    @Builder.Default
+    private Map<Dimension, Boolean> answers = new HashMap<>();
     // recommended roadmap
     //private RoadMap recommendedRoadmap;
 
